@@ -1,3 +1,6 @@
 {
-  "app.title": "food traffic light"
+  "app.title": "food traffic light",
+  "measure-unit.weight": "weight",
+  "measure-unit.capacity": "capacity",
+  "measure-unit": "unit"
 }

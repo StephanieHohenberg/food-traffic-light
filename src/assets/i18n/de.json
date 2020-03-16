@@ -1,3 +1,6 @@
 {
-  "app.title": "Lebensmittelampel"
+  "app.title": "Lebensmittelampel",
+  "measure-unit.weight": "Gewicht",
+  "measure-unit.capacity": "Kapazitaet",
+  "measure-unit": "Einheit"
 }
