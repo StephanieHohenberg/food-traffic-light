@@ -4,4 +4,10 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<app-measure-input></app-measure-input>
+<app-measure-input (measureInputChanged)="measurementInput=$event">
+</app-measure-input>
+
+<div *ngFor="let nutr of nutritions">
+  <light-panel-calculator [measurementInput]="measurementInput" [nutritionEntry]="nutr">
+  </light-panel-calculator>
+</div>
