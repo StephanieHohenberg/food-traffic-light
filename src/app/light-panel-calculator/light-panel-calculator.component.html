@@ -1,1 +1,8 @@
-<p>light-panel-calculator works!</p>
+<div [ngStyle]="{'border-color': color}" class="box">
+  <form>
+    <mat-form-field (input)="calculateColor(inputElement.value)">
+      <input #inputElement matInput pattern="^[0-9]*$">
+    </mat-form-field>
+    {{label | translate}}
+  </form>
+</div>

@@ -2,5 +2,9 @@
   "app.title": "food traffic light",
   "measure-unit.weight": "weight",
   "measure-unit.capacity": "capacity",
-  "measure-unit": "unit"
+  "measure-unit": "unit",
+  "nutrition.fat": "fat",
+  "nutrition.sfat": "saturated fatty acids",
+  "nutrition.sugar": "sugar",
+  "nutrition.salt": "salt"
 }

@@ -1,0 +1,9 @@
+#calculator {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#toolbar-title {
+  flex: 1 1 auto;
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {MeasurementInput, Unit, UNITS} from '../models/measurement.model';
 
@@ -10,19 +10,21 @@ import {MeasurementInput, Unit, UNITS} from '../models/measurement.model';
 export class MeasureInputComponent implements OnInit {
 
   @Output() public measureInputChanged = new EventEmitter<MeasurementInput>();
+  @Input()
+  public inputValue;
+  @Input()
+  public selectedUnit;
   public unitControl = new FormControl('', Validators.required);
   public units: Unit[] = UNITS;
-  public selectedUnit;
-  public inputValue = 100; // TODO: restrict input field on numbers only
+
   constructor() {
   }
 
   public ngOnInit(): void {
-    this.selectedUnit = this.units[0];
   }
 
   public emitChanges(): void {
-    this.measureInputChanged.emit({value: this.inputValue, unit: this.selectedUnit.value});
+    this.measureInputChanged.emit({value: this.inputValue, unit: this.selectedUnit});
   }
 
 }

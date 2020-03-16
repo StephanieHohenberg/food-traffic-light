@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NutritionEntry} from '../models/nutritions-bible.model';
-import {MeasurementInput} from '../models/measurement.model';
 
 @Component({
   selector: 'app-light-panel-calculator',
@@ -9,8 +7,9 @@ import {MeasurementInput} from '../models/measurement.model';
 })
 export class LightPanelCalculatorComponent implements OnInit {
 
-  @Input() nutritionEntry: NutritionEntry;
-  @Input() measureInput: MeasurementInput;
+  @Input() public label: string;
+  @Input() public limits: number[] = [];
+  public color = 'primary';
 
   constructor() {
   }
@@ -18,4 +17,15 @@ export class LightPanelCalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public calculateColor(value) {
+    this.color = 'grey';
+    value = parseInt(value, 10);
+    if (value < this.limits[0]) {
+      this.color = 'green';
+    } else if (value <= this.limits[1]) {
+      this.color = 'orange';
+    } else if (value > this.limits[1]) {
+      this.color = 'red';
+    }
+  }
 }

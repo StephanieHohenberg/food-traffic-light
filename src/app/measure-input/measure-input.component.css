@@ -1,0 +1,13 @@
+.box {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+mat-form-field {
+  padding-right: 20px;
+  max-width: 75px;
+}
+
+#field-unit {
+  max-width: 50px;
+}

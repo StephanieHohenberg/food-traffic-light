@@ -1,11 +1,11 @@
-<form>
+<form class="box">
   <mat-form-field (input)="emitChanges()">
     <mat-label *ngIf="unitControl.value?.isWeight">{{"measure-unit.weight" | translate}}</mat-label>
     <mat-label *ngIf="!unitControl.value?.isWeight">{{"measure-unit.capacity" | translate}}</mat-label>
-    <input [(ngModel)]="inputValue" matInput name="inputValue">
+    <input [(ngModel)]="inputValue" matInput name="inputValue" pattern="^[0-9]*$">
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field id="field-unit">
     <mat-label>{{"measure-unit" | translate}}</mat-label>
     <mat-select (selectionChange)="emitChanges()" [(ngModel)]="selectedUnit" [formControl]="unitControl">
       <mat-option *ngFor="let unit of units" [value]="unit">

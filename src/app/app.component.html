@@ -1,13 +1,23 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>{{ 'app.title' | translate }}</span>
+      <span id="toolbar-title">
+        <span>{{ 'app.title' | translate }}</span>
+        &nbsp;
+        <mat-icon aria-hidden="false">traffic</mat-icon>
+      </span>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<app-measure-input (measureInputChanged)="measurementInput=$event">
-</app-measure-input>
+<div id="calculator">
+  <app-measure-input
+    (measureInputChanged)="measurementInput=$event" [inputValue]="measurementInput.value"
+    [selectedUnit]="measurementInput.unit">
+  </app-measure-input>
 
-<div *ngFor="let nutr of nutritions">
-  <light-panel-calculator [measurementInput]="measurementInput" [nutritionEntry]="nutr">
-  </light-panel-calculator>
+  <div *ngFor="let nutr of nutritions">
+    <app-light-panel-calculator
+      [label]="nutr.label"
+      [limits]="getLimitsByMeasurementInput(nutr)">
+    </app-light-panel-calculator>
+  </div>
 </div>

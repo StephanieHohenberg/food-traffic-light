@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {LightPanelCalculatorComponent} from './light-panel-calculator/light-panel-calculator.component';
+import {MatIconModule} from '@angular/material/icon';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
