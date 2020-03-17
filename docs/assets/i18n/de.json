@@ -1,0 +1,11 @@
+{
+  "app.title": "Lebensmittelampel",
+  "measure-unit.weight": "Gewicht",
+  "measure-unit.capacity": "Kapazitaet",
+  "measure-unit": "Einheit",
+  "nutrition.fat": "Fett",
+  "nutrition.sfat": "gesaettigte Fettsaeuren",
+  "nutrition.sugar": "Zucker",
+  "nutrition.salt": "Salz",
+  "hint.toomuch": "g zu viel"
+}
