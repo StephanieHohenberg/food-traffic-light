@@ -6,5 +6,6 @@
   "nutrition.fat": "Fett",
   "nutrition.sfat": "gesaettigte Fettsaeuren",
   "nutrition.sugar": "Zucker",
-  "nutrition.salt": "Salz"
+  "nutrition.salt": "Salz",
+  "hint.toomuch": "g zu viel"
 }

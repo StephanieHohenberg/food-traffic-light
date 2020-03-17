@@ -1,8 +1,11 @@
-<div [ngStyle]="{'border-color': color}" class="box">
+<div [ngStyle]="{'border-color': calculateColor()}" class="box">
   <form>
-    <mat-form-field (input)="calculateColor(inputElement.value)">
+    <mat-form-field (input)="onInput(inputElement.value)">
       <input #inputElement matInput pattern="^[0-9]*$">
     </mat-form-field>
-    {{label | translate}}
+    g &nbsp;{{label | translate}}
+    <mat-error *ngIf="inputElement.value > limits[1]">
+      {{inputElement.value - limits[0]}} {{"hint.toomuch" | translate}}
+    </mat-error>
   </form>
 </div>

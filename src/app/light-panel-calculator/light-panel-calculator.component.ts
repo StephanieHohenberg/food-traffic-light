@@ -9,7 +9,7 @@ export class LightPanelCalculatorComponent implements OnInit {
 
   @Input() public label: string;
   @Input() public limits: number[] = [];
-  public color = 'primary';
+  public inputValue = -1;
 
   constructor() {
   }
@@ -17,15 +17,20 @@ export class LightPanelCalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public calculateColor(value) {
-    this.color = 'grey';
-    value = parseInt(value, 10);
-    if (value < this.limits[0]) {
-      this.color = 'green';
-    } else if (value <= this.limits[1]) {
-      this.color = 'orange';
-    } else if (value > this.limits[1]) {
-      this.color = 'red';
+  public onInput(value): void {
+    this.inputValue = parseInt(value, 10);
+  }
+
+  public calculateColor(): string {
+    if (this.inputValue < 0) {
+      return 'grey';
+    } else if (this.inputValue < this.limits[0]) {
+      return 'green';
+    } else if (this.inputValue <= this.limits[1]) {
+      return 'orange';
+    } else if (this.inputValue > this.limits[1]) {
+      return 'red';
     }
+    return 'grey';
   }
 }
