@@ -18,8 +18,7 @@ import {LanguageToggleComponent} from './language-toggle/language-toggle.compone
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http); // for running locally
-  // return new TranslateHttpLoader(http, './food-traffic-light/assets/i18n/', '.json'); // for github deployment
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
