@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
 import {NutritionEntry, NUTRITIONS} from './models/nutritions-bible.model';
 import {MeasurementInput, UNITS} from './models/measurement.model';
 
@@ -13,8 +12,7 @@ export class AppComponent {
   public nutritions: NutritionEntry[] = NUTRITIONS;
   public measurementInput: MeasurementInput = {value: 100, unit: UNITS[0]};
 
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
+  constructor() {
   }
 
   public getLimitsByMeasurementInput(nutritionEntry: NutritionEntry): number[] {
